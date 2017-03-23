@@ -1,21 +1,25 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import home from '@/containers/Home';
+import Home from '@/containers/Home';
 import CreateSnipmarks from '@/containers/CreateSnipmark';
 
 Vue.use(Router);
 
+const routes = [
+  {
+    path: '/',
+    name: 'Home',
+    component: Home,
+  },
+  {
+    path: '/create-snipmarks',
+    name: 'CreateSnipmarks',
+    component: CreateSnipmarks,
+  },
+];
+
 export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'Home',
-      component: home,
-    },
-    {
-      path: '/create',
-      name: 'CreateSnipmarks',
-      component: CreateSnipmarks,
-    },
-  ],
+  mode: 'history', // para recargar la vista sin la pagina
+  routes,
+  linkActiveClass: 'is-active', // el link activo tiene la clase is-active
 });
