@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Hello from '@/components/Hello';
+import home from '@/containers/Home';
+import CreateSnipmarks from '@/containers/CreateSnipmark';
 
 Vue.use(Router);
 
@@ -8,8 +9,13 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Hello',
-      component: Hello,
+      name: 'Home',
+      component: home,
+    },
+    {
+      path: '/create',
+      name: 'CreateSnipmarks',
+      component: CreateSnipmarks,
     },
   ],
 });
